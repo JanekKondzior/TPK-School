@@ -15,7 +15,7 @@ import android.media.MediaPlayer;
 public class QuestionActivity extends AppCompatActivity {
 
     private String correct;
-
+    private int Score = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +24,14 @@ public class QuestionActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
 
         final Quiz quiz = db.getQuiz();
-
+        Intent myIntent = getIntent();
+        Score = myIntent.getIntExtra("score", 0);
         TextView category = findViewById(R.id.category);
         category.setText(quiz.getCategory());
-
+        TextView score = findViewById(R.id.scoreView);
+        score.setText(Integer.toString(Score));
         TextView question = findViewById(R.id.question);
         question.setText(quiz.getTamilTranslation());
-
         TextView option1 = findViewById(R.id.option1);
         option1.setText(quiz.getOption1());
         TextView option2 = findViewById(R.id.option2);
@@ -51,10 +52,10 @@ public class QuestionActivity extends AppCompatActivity {
                     } else {
                         correct = "INCORRECT";
                     }
-
                     // Create a new intent to open the {@link LearnActivity}
                     Intent resultIntent = new Intent(QuestionActivity.this, ResultSplashActivity.class);
                     resultIntent.putExtra("correct", correct);
+                    resultIntent.putExtra("score", Score);
 
                     // Start the new activity
                     startActivity(resultIntent);
