@@ -12,13 +12,10 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".LearnActivity" />
@@ -28,6 +25,7 @@
             android:name=".QuestionActivity"
             android:label="@string/title_activity_question" />
         <activity android:name=".ResultSplashActivity"></activity>
+        <activity android:name=".WriteOnScreenActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

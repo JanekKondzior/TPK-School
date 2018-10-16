@@ -21,6 +21,7 @@ public class VocabularyActivity extends AppCompatActivity {
         CardView numbers = (CardView) findViewById(R.id.CardView_numbers);
         CardView phrases = (CardView) findViewById(R.id.CardView_phrases);
         CardView family = (CardView) findViewById(R.id.CardView_family);
+        CardView draw = (CardView) findViewById(R.id.CardView_Draw);
 
         // Set a click listener on that View
         colors.setOnClickListener(new View.OnClickListener() {
@@ -78,5 +79,18 @@ public class VocabularyActivity extends AppCompatActivity {
                 startActivity(familyIntent);
             }
         });
+
+        draw.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the colors category is clicked on.
+            @Override
+            public void onClick(View view) {
+                // Create a new intent to open the {@link LearnActivity}
+                Intent drawIntent = new Intent(VocabularyActivity.this, WriteOnScreenActivity.class);
+
+                // Start the new activity
+                startActivity(drawIntent);
+            }
+        });
+
     }
 }

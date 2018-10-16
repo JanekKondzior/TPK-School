@@ -88,4 +88,8 @@ Make learning the language interesting and fun. The use of specific applications
     <!-- game submit button-->
     <string name="button_submit">SUBMIT</string>
 
+    <string name="details_draw">Draw Tamil words</string>
+
+    <string name="category_draw">Draw</string>
+
 </resources>
